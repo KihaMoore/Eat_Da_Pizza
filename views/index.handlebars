@@ -1,0 +1,55 @@
+
+<div id="wrapper"></div>
+<div class="add">
+<form class="create-form">
+
+  <div class="form">
+   <div class="pizzaName">
+    {{!-- <label for="ca">Pizza Name:</label> --}}
+    <input type="text" id="ca" name="name" name="sleepy" value="0">
+  <div class="box">
+  <button type="submit" id="submitButton"  class="btn btn-white btn-animation-1">Add Pizza</button>
+
+</div>
+   
+</div>
+
+
+
+</form>
+</div>
+</div>
+  </div>
+
+
+<div class="yourPizza">
+<h2 class="yourPizzaH2">Your Pizza</h2>
+
+<ul　class="yourPizzaUl">
+  {{#each pizzas}}
+    
+      {{#unless sleepy}}
+      {{> pizzas/pizzas-block sleep=true}}
+    {{/unless}}
+  
+  {{/each}}
+</ul>
+</div>
+
+
+
+
+
+<div class="eaten">
+<h2 class="eatenH2">Eaten</h2>
+
+<ul class="eatenUl">
+ {{#each pizzas}}
+    {{#if sleepy}}
+      {{> pizzas/pizzas-block sleep=true}}
+    {{/if}}
+  {{/each}}
+</ul> 
+</div> 
+
+</div>
